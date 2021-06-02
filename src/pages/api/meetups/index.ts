@@ -7,11 +7,9 @@ async function handleApiMeetups(req, res) {
 
       const client = await MongoClient.connect(process.env.MONGODB_URI);
       const db = client.db();
-
       const meetupsCollection = db.collection("meetups");
 
-      const result = await meetupsCollection.insertOne(data);
-      console.log(result);
+      await meetupsCollection.insertOne(data);
 
       client.close();
 
