@@ -17,4 +17,6 @@ const DUMMY_MEETUPS = [
   },
 ];
 
+export const DUMMY_MEETUP_SINGLE_ITEM = DUMMY_MEETUPS[0];
+
 export default DUMMY_MEETUPS;
