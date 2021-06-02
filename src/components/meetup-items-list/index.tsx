@@ -4,7 +4,7 @@ import styles from "./styles.module.scss";
 function MeetupItemsList({ meetups }) {
   return (
     <ul className={styles.list}>
-      {meetups.map(({ id, image, title, address }) => (
+      {meetups?.map(({ id, image, title, address }) => (
         <MeetupItem
           key={id}
           id={id}
