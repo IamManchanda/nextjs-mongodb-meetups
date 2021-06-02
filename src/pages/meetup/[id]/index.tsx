@@ -1,8 +1,8 @@
-import { DUMMY_MEETUP_SINGLE_ITEM } from "../../../fixtures/dummy-meetups";
+import DUMMY_MEETUPS from "../../../fixtures/dummy-meetups";
 import MeetupDetail from "../../../components/meetup-detail/index";
 
-function PageMeetupWithId() {
-  const { title, image, address, description } = DUMMY_MEETUP_SINGLE_ITEM;
+function PageMeetupWithId({ meetup }) {
+  const { title, image, address, description } = meetup;
 
   return (
     <MeetupDetail
@@ -12,6 +12,26 @@ function PageMeetupWithId() {
       description={description}
     />
   );
+}
+
+export async function getStaticPaths() {
+  return {
+    paths: DUMMY_MEETUPS.map(({ id }) => ({
+      params: { id },
+    })),
+    fallback: false,
+  };
+}
+
+export async function getStaticProps({ params }) {
+  const { id } = params;
+
+  return {
+    props: {
+      meetup: DUMMY_MEETUPS.find((x) => x.id === id),
+    },
+    revalidate: 1,
+  };
 }
 
 export default PageMeetupWithId;
