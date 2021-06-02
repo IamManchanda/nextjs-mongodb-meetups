@@ -35,21 +35,21 @@ function NewMeetupForm({ onAddMeetup }) {
           <input type="text" required id="title" ref={titleInputRef} />
         </div>
         <div className={styles.control}>
-          <label htmlFor="image">Meetup Image (Unsplash Id)</label>
+          <label htmlFor="image">Image (Unsplash Id)</label>
           <input type="text" required id="image" ref={imageInputRef} />
         </div>
         <div className={styles.control}>
-          <label htmlFor="address">Meetup Address</label>
+          <label htmlFor="address">Address</label>
           <input type="text" required id="address" ref={addressInputRef} />
         </div>
         <div className={styles.control}>
-          <label htmlFor="description">Meetup Description</label>
+          <label htmlFor="description">Description</label>
           <textarea
             id="description"
             required
             rows={5}
             ref={descriptionInputRef}
-          ></textarea>
+          />
         </div>
         <div className={styles.actions}>
           <button>Add Meetup</button>
