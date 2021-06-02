@@ -19,10 +19,10 @@ function MainNavigation() {
             </Link>
           </li>
           <li>
-            <Link href="/meetup/create-new">
+            <Link href="/meetups/create-new">
               <a
                 className={
-                  pathname == "/meetup/create-new" ? styles.active : ""
+                  pathname == "/meetups/create-new" ? styles.active : ""
                 }
               >
                 Add New Meetup

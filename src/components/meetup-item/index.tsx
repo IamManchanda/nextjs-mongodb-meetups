@@ -8,7 +8,7 @@ function MeetupItem({ id, image, title, address }) {
   const router = useRouter();
 
   function handleShowDetails() {
-    router.push(`/meetup/${id}`);
+    router.push(`/meetups/${id}`);
   }
 
   return (
