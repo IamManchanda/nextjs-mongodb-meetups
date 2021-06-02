@@ -10,6 +10,7 @@ export async function getStaticProps() {
   const client = await MongoClient.connect(process.env.MONGODB_URI);
   const db = client.db();
   const meetupsCollection = db.collection("meetups");
+
   const meetups = await meetupsCollection.find().toArray();
   client.close();
 
