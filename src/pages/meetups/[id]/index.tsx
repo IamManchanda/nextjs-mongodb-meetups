@@ -1,3 +1,4 @@
+import Head from "next/head";
 import { MongoClient, ObjectId } from "mongodb";
 
 import MeetupDetail from "../../../components/meetup-detail/index";
@@ -6,12 +7,18 @@ function PageMeetupWithId({ meetup }) {
   const { title, image, address, description } = meetup;
 
   return (
-    <MeetupDetail
-      title={title}
-      image={image}
-      address={address}
-      description={description}
-    />
+    <>
+      <Head>
+        <title>{title} - Next.js Meetups</title>
+        <meta name="description" content={description} />
+      </Head>
+      <MeetupDetail
+        title={title}
+        image={image}
+        address={address}
+        description={description}
+      />
+    </>
   );
 }
 

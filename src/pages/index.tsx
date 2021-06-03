@@ -1,9 +1,21 @@
+import Head from "next/head";
 import { MongoClient } from "mongodb";
 
 import MeetupItemsList from "../components/meetup-items-list/index";
 
 function PageIndex({ meetups }) {
-  return <MeetupItemsList meetups={meetups} />;
+  return (
+    <>
+      <Head>
+        <title>All Meetups - Next.js Meetups</title>
+        <meta
+          name="description"
+          content="Browse a Huge list of highly active meetups"
+        />
+      </Head>
+      <MeetupItemsList meetups={meetups} />
+    </>
+  );
 }
 
 export async function getStaticProps() {
