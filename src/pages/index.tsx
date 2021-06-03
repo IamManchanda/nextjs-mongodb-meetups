@@ -28,12 +28,14 @@ export async function getStaticProps() {
 
   return {
     props: {
-      meetups: meetups.map(({ _id, title, image, address }) => ({
-        id: _id.toString(),
-        title,
-        image,
-        address,
-      })),
+      meetups: meetups
+        .map(({ _id, title, image, address }) => ({
+          id: _id.toString(),
+          title,
+          image,
+          address,
+        }))
+        .reverse(),
     },
     revalidate: 1,
   };
